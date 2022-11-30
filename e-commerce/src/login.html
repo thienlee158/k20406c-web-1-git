@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login">
+        <label for="uname">User Name</label>
+        <input type="text" placeholder="Enter your user name" name="uname" id="uname" required>
+
+        <label for="psw">Password</label>
+        <input type="password" placeholder="Enter your password" name="psw" id="psw" required>
+
+        <button type="submit" onclick="login()">Login</button>
+        <button type="submit" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        if(typeof (Storage) !== "undefined"){
+                var user = localStorage.getItem("user");
+                var pwd = localStorage.getItem("pwd");
+
+                document.getElementById("uname").value = user;
+                document.getElementById("psw").value = pwd;
+            }
+    </script>
+
+    <script>
+        function login(){
+            if(typeof (Storage) !== "undefined"){
+                var user = document.getElementById("uname").value;
+                var pwd = document.getElementById("psw").value;
+
+                localStorage.setItem("user", user);
+                localStorage.setItem("pwd", pwd);
+
+                alert("Save Local Storage Successfully");
+
+                window.location.href = "index.html"
+
+                // var getUser = sessionStorage.getItem("user");
+                // alert("User=" + getUser);
+            }
+        }
+
+        function logout(){
+            if (typeof(Storage) !== "undefined"){
+                // localStorage.removeItem("user");
+                // localStorage.removeItem("pwd");
+                localStorage.clear();
+                alert("Logout successfully")
+            }
+        }
+    </script>
+</body>
+</html>

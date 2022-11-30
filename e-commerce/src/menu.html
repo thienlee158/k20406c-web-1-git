@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Menu</title>
+
+    <style>
+        .menu {
+            width: 100%;
+            background-color: #555;
+            overflow: auto;
+            position: fixed;
+            top: 0
+        }
+
+        .menu a {
+            float: left;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .menu a:hover {
+            background-color: #000;
+        }
+
+        @media screen and (max-width: 800px) {
+            .menu a {
+                float: none;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="../index.html"><i class="fa fa-home"></i> Home</a>
+        <a href="/src/product.html"><i class="fa fa-book"></i> Product</a>
+        <a href="/src/dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+        <a href="/src/contact.html"><i class="fa fa-vcard"></i> Contact</a>
+    </div>
+</body>
+</html>
